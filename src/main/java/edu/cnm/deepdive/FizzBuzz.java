@@ -3,20 +3,27 @@ package edu.cnm.deepdive;
 public class FizzBuzz {
 
   public String fizzBuzz(int position) {
+    String result = "";
     boolean isFizz = position % 3 == 0;
     boolean isBuzz = position % 5 == 0;
 
     if (position <= 0) {
       throw new IllegalArgumentException("Position must be greater than 0");
-    } else if (isFizz && isBuzz) {
-      return "FizzBuzz";
-    } else if (isBuzz) {
-      return "Buzz";
-    } else if (isFizz) {
-      return "Fizz";
-    } else {
-      return Integer.toString(position);
     }
+
+    if (isFizz) {
+      result += "Fizz";
+    }
+
+    if (isBuzz) {
+      result += "Buzz";
+    }
+
+    if (result.isEmpty()) {
+      result = Integer.toString(position);
+    }
+
+    return result;
   }
 
   public static void main(String[] args) {
@@ -29,7 +36,7 @@ public class FizzBuzz {
     }
 
     for (int i = 1; i <= max; i++) {
-      System.out.println(fizzBuzz.fizzBuzz(i));
+      IO.println(fizzBuzz.fizzBuzz(i));
     }
   }
 
