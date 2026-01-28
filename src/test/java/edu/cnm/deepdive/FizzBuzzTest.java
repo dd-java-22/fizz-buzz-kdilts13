@@ -37,7 +37,7 @@ class FizzBuzzTest {
   @ValueSource(ints = {15, 30, 90})
   void fizzBuzz_FizzBuzz(int position) {
     Set<FizzBuzz> actual = FizzBuzz.fizzBuzz(position);
-    Set<FizzBuzz> expected = EnumSet.allOf(FizzBuzz.class);
+    Set<FizzBuzz> expected = EnumSet.of(FizzBuzz.FIZZ, FizzBuzz.BUZZ);
     assertEquals(expected, actual);
   }
 

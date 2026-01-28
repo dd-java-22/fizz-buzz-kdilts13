@@ -4,17 +4,7 @@ import java.util.EnumSet;
 import java.util.Set;
 
 public enum FizzBuzz {
-  FIZZ {
-    @Override
-    public String toString() {
-      return "Fizz";
-    }
-  }, BUZZ {
-    @Override
-    public String toString() {
-      return "Buzz";
-    }
-  };
+  FIZZ, BUZZ;
 
   public static Set<FizzBuzz> fizzBuzz(int position) {
     Set<FizzBuzz> result = EnumSet.noneOf(FizzBuzz.class);
